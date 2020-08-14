@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="ir.sain.university">
+    <namespace>UNV</namespace>
+    <!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+    <entity local-service="true" name="University" remote-service="true" uuid="true">
+
+        <!-- PK fields -->
+
+        <column name="universityId" primary="true" type="long"/>
+
+        <!-- Group instance -->
+
+        <column name="groupId" type="long"/>
+
+        <!-- Audit fields -->
+
+        <column name="companyId" type="long"/>
+        <column name="userId" type="long"/>
+        <column name="userName" type="String"/>
+        <column name="createDate" type="Date"/>
+        <column name="modifiedDate" type="Date"/>
+
+        <column name="status" type="int" />
+        <column name="statusByUserId" type="long" />
+        <column name="statusByUserName" type="String" />
+        <column name="statusDate" type="Date" />
+
+        <!-- Other fields -->
+        <column name="name" type="String"/>
+        <!-- Order -->
+
+        <order by="asc">
+            <order-column name="name"/>
+        </order>
+
+        <!-- Finder methods -->
+
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"/>
+        </finder>
+    </entity>
+    <entity local-service="true" name="Student" remote-service="true" uuid="true">
+
+        <!-- PK fields -->
+
+        <column name="studentId" primary="true" type="long"/>
+
+        <!-- Group instance -->
+
+        <column name="groupId" type="long"/>
+
+        <!-- Audit fields -->
+
+        <column name="companyId" type="long"/>
+        <column name="userId" type="long"/>
+        <column name="userName" type="String"/>
+        <column name="createDate" type="Date"/>
+        <column name="modifiedDate" type="Date"/>
+
+        <column name="status" type="int" />
+        <column name="statusByUserId" type="long" />
+        <column name="statusByUserName" type="String" />
+        <column name="statusDate" type="Date" />
+
+        <!-- Other fields -->
+        <column name="code" type="String"/>
+        <column name="name" type="String"/>
+        <column name="phone" type="String"/>
+        <column name="universityId" type="long"/>
+		<column name="courseId" type="Collection" entity="Course" mapping-table="Student_Course"/>
+
+        <!-- Order -->
+
+        <order by="asc">
+            <order-column name="name"/>
+        </order>
+
+        <!-- Finder methods -->
+
+		<finder name="G_G" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="universityId" />
+		</finder>
+    </entity>
+    <entity local-service="true" name="Course" remote-service="true" uuid="true">
+
+        <!-- PK fields -->
+
+        <column name="courseId" primary="true" type="long"/>
+
+        <!-- Group instance -->
+
+        <column name="groupId" type="long"/>
+
+        <!-- Audit fields -->
+
+        <column name="companyId" type="long"/>
+        <column name="userId" type="long"/>
+        <column name="userName" type="String"/>
+        <column name="createDate" type="Date"/>
+        <column name="modifiedDate" type="Date"/>
+
+        <column name="status" type="int" />
+        <column name="statusByUserId" type="long" />
+        <column name="statusByUserName" type="String" />
+        <column name="statusDate" type="Date" />
+
+        <!-- Other fields -->
+        <column name="code" type="String"/>
+        <column name="name" type="String"/>
+        <column name="unit" type="int"/>
+        <column name="universityId" type="long"/>
+        <column name="studentId" type="Collection" entity="Student" mapping-table="Student_Course"/>
+        <!-- Order -->
+
+        <order by="asc">
+            <order-column name="name"/>
+        </order>
+
+        <!-- Finder methods -->
+
+		<finder name="G_G" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="universityId" />
+		</finder>
+
+    </entity>
+</service-builder>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="ir.sain.university.model.Course">
+		<field name="uuid" type="String" />
+		<field name="courseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="name" type="String" />
+		<field name="unit" type="int" />
+		<field name="universityId" type="long" />
+	</model>
+	<model name="ir.sain.university.model.Student">
+		<field name="uuid" type="String" />
+		<field name="studentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="name" type="String" />
+		<field name="phone" type="String" />
+		<field name="universityId" type="long" />
+	</model>
+	<model name="ir.sain.university.model.University">
+		<field name="uuid" type="String" />
+		<field name="universityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="name" type="String" />
+	</model>
+</model-hints>

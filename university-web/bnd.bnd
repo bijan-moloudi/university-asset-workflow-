@@ -1,0 +1,4 @@
+Bundle-Name: university-web
+Bundle-SymbolicName: ir.sain.university
+Bundle-Version: 1.0.0
+Export-Package: ir.sain.university.constants

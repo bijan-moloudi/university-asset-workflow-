@@ -1,0 +1,10 @@
+Bundle-Name: university-api
+Bundle-SymbolicName: ir.sain.university.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	ir.sain.university.exception,\
+	ir.sain.university.model,\
+	ir.sain.university.service,\
+	ir.sain.university.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../university-service/service.xml
